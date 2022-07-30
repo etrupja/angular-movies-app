@@ -6,4 +6,6 @@
     Image URL: {{imageUrl | uppercase}}
 </p>
 
-<p> {{price | currency}}</p>
+<span>
+    Selling price: {{sellingPrice | currency}}, profit: {{sellingPrice | profit: 10 | currency}}
+</span>

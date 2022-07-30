@@ -14,4 +14,6 @@ export class AppComponent {
 
   price = 10;
 
+  sellingPrice = 15.50;
+
 }
