@@ -10,15 +10,9 @@ export class AppComponent {
 
   today = new Date();
 
-  imageUrl = 'https://dotnethow.net/images/movies/movie-1.jpeg';
-  imageWidth = 100;
-
-  price = 10;
-
-  sellingPrice = 15.50;
-
-  attributeValue = "movies-app-test-value";
-
-  bgColor = 'blueviolet'
+  timeNow = new Date();
+  setTimeToNow(){
+    this.timeNow = new Date();
+  }
 
 }

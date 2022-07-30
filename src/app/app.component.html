@@ -2,8 +2,5 @@
 
 <h3>Today: {{today | date: 'dd/MM/yyyy'}}</h3>
 
-<img [src]="imageUrl" [width]="imageWidth" />
-
-<p [style.backgroundColor]="bgColor">
-    This is a paragraph to test the class and style binding
-</p>
+<button (click)="setTimeToNow()">Set time to now</button>
+<p>Time now: {{timeNow}}</p>
