@@ -11,6 +11,7 @@ export class AppComponent {
   today = new Date();
 
   imageUrl = 'https://dotnethow.net/images/movies/movie-1.jpeg';
+  imageWidth = 100;
 
   price = 10;
 
