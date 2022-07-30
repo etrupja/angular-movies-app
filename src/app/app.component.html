@@ -4,10 +4,6 @@
 
 <img [src]="imageUrl" [width]="imageWidth" />
 
-
-<span>
-    Selling price: {{sellingPrice | currency}}, profit: {{sellingPrice | profit: 10 | currency}}
-</span>
-
-<hr>
-<button type="button" [attr.aria-label]="attributeValue">Sample button</button>
+<p [style.backgroundColor]="bgColor">
+    This is a paragraph to test the class and style binding
+</p>

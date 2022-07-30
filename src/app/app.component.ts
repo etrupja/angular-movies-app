@@ -19,4 +19,6 @@ export class AppComponent {
 
   attributeValue = "movies-app-test-value";
 
+  bgColor = 'blueviolet'
+
 }
