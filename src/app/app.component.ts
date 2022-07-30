@@ -17,4 +17,6 @@ export class AppComponent {
 
   sellingPrice = 15.50;
 
+  attributeValue = "movies-app-test-value";
+
 }
