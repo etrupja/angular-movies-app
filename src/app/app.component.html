@@ -2,5 +2,6 @@
 
 <h3>Today: {{today | date: 'dd/MM/yyyy'}}</h3>
 
-<button (click)="setTimeToNow()">Set time to now</button>
-<p>Time now: {{timeNow}}</p>
+<input #color placeholder="type your color">
+<button (click)="setTextColor(color.value)">Set Color</button>
+<p [style.color]="pColor">This is just a sample text</p>

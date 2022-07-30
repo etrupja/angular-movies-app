@@ -10,9 +10,10 @@ export class AppComponent {
 
   today = new Date();
 
-  timeNow = new Date();
-  setTimeToNow(){
-    this.timeNow = new Date();
+  pColor = '';
+  setTextColor(_color: string){
+    console.log(_color);
+    this.pColor = _color
   }
 
 }
