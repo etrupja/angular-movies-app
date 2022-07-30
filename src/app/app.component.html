@@ -1,7 +1,9 @@
-<h1>{{title}}</h1>
+<h1>{{title | lowercase}}</h1>
 
-<h3>Today: {{today}}</h3>
+<h3>Today: {{today | date: 'dd/MM/yyyy'}}</h3>
 
 <p>
-    Image URL: {{imageUrl}}
+    Image URL: {{imageUrl | uppercase}}
 </p>
+
+<p> {{price | currency}}</p>

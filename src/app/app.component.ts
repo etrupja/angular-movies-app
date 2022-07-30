@@ -12,4 +12,6 @@ export class AppComponent {
 
   imageUrl = 'https://dotnethow.net/images/movies/movie-1.jpeg';
 
+  price = 10;
+
 }
