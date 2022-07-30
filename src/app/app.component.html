@@ -1,7 +1,3 @@
-<h1>{{title | lowercase}}</h1>
+<input [(ngModel)]="fullName" >
 
-<h3>Today: {{today | date: 'dd/MM/yyyy'}}</h3>
-
-<input #color placeholder="type your color">
-<button (click)="setTextColor(color.value)">Set Color</button>
-<p [style.color]="pColor">This is just a sample text</p>
+<p>{{fullName}}</p>
