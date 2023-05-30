@@ -17,6 +17,7 @@ import { DetailsActorsComponent } from './components/details-actors/details-acto
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { AppRoutesModule } from './modules/app.routes';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -31,10 +32,11 @@ import { AppRoutesModule } from './modules/app.routes';
     SearchComponent,
     LoaderComponent,
     ModalComponent,
+    NotFoundComponent,
+    DetailsActorsComponent,
 
     //Pipes
-    ProfitPipe,
-      DetailsActorsComponent
+    ProfitPipe
   ],
   imports: [
     BrowserModule,
