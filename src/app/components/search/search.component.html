@@ -20,7 +20,7 @@
         <td>Movie #1 Title</td>
         <td>This is a short description for Movie #1 Title</td>
         <td>
-            <a class="btn btn-warning"> <i class="bi bi-film"></i> Trailer</a>
+            <a class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal"> <i class="bi bi-film"></i> Trailer</a>
             <a class="btn btn-primary"> <i class="bi bi-eye"></i> Details</a>
         </td>
       </tr>
@@ -33,10 +33,32 @@
         <td>Movie #2 Title</td>
         <td>This is a short description for Movie #2 Title</td>
         <td>
-            <a class="btn btn-warning"> <i class="bi bi-film"></i> Trailer</a>
+            <a class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal"> <i class="bi bi-film"></i> Trailer</a>
             <a class="btn btn-primary"> <i class="bi bi-eye"></i> Details</a>
         </td>
       </tr>
       
     </tbody>
   </table>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+            <iframe 
+                width="100%" 
+                height="360" 
+                src="https://www.youtube.com/embed/ShVo-llHwxQ" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+            </iframe>
+
+        </div>
+        <div class="modal-footer justify-content-center">
+          <b>{{movieTitle}}</b>
+        </div>
+      </div>
+    </div>
+  </div>
