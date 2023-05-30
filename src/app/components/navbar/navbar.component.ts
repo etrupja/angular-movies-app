@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+  public searchMovieTitle = ""
+
   constructor() { }
 
   ngOnInit(): void {

@@ -61,7 +61,8 @@
     </div>
 
     <div class="text-center">
-        <a class="btn btn-warning" routerLink="/details/actors">View more</a>
+        <a class="btn btn-warning" 
+        [routerLink]="['/details/actors/'+movieId]">View more</a>
     </div>
 </div>
 <hr>
@@ -76,7 +77,8 @@
     </div>
 
     <div class="text-center">
-        <a class="btn btn-warning"  routerLink="/details/reviews">View more</a>
+        <a class="btn btn-warning"  [routerLink]="['/details/reviews/'+movieId]">View more</a>
+
     </div>
 </div>
 <hr>
@@ -91,8 +93,7 @@
     </div>
 
     <div class="text-center">
-        <a class="btn btn-warning"  routerLink="/details/movies">View more</a>
+        <a class="btn btn-warning"  [routerLink]="['/details/movies/'+movieId]">View more</a>
     </div>
 </div>
-
 <br>
