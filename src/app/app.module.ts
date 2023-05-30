@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -15,6 +14,8 @@ import { ModalComponent } from './components/modal/modal.component';
 import { ProfitPipe } from './pipes/profit.pipe';
 import { FormsModule } from '@angular/forms';
 import { DetailsActorsComponent } from './components/details-actors/details-actors.component';
+import { AppComponent } from './app.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,14 @@ import { DetailsActorsComponent } from './components/details-actors/details-acto
   ],
   imports: [
     BrowserModule,
+    RouterModule.forRoot([
+      {path:'', component: HomeComponent},
+      {path:'home', component: HomeComponent},
+      {path:'details', component: DetailsComponent},
+      {path:'details/actors', component: DetailsActorsComponent},
+      {path:'details/movies', component: DetailsMoviesComponent},
+      {path:'details/reviews', component: DetailsReviewsComponent}
+    ]),
     FormsModule
   ],
   providers: [],
