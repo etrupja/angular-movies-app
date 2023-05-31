@@ -10,6 +10,10 @@ export class DetailsComponent implements OnInit, OnChanges, AfterContentInit, Af
 
   movieId = '';
 
+  stars = ['Start #1 Name', 'Start #2 Name', 'Start #3 Name'];
+  genres = ['Genre #1', 'Genre #2', 'Genre #3']
+  directors = ['Director #1', 'Director #2', 'Director #3']
+
   constructor(private _activedRoute: ActivatedRoute) {
 
     this._activedRoute.params.subscribe((p) => {

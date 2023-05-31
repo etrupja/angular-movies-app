@@ -7,6 +7,54 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailsMoviesComponent implements OnInit {
 
+  similarMovies: any[] = [
+    {
+      imageUrl: '../../../assets/images/card-image.png',
+      title: 'Movie #2 Title',
+      rate: 9.5
+    },
+    {
+      imageUrl: '../../../assets/images/card-image.png',
+      title: 'Movie #2 Title',
+      rate: 9.5
+    },
+    {
+      imageUrl: '../../../assets/images/card-image.png',
+      title: 'Movie #2 Title',
+      rate: 9.5
+    },
+    {
+      imageUrl: '../../../assets/images/card-image.png',
+      title: 'Movie #2 Title',
+      rate: 9.5
+    },
+    {
+      imageUrl: '../../../assets/images/card-image.png',
+      title: 'Movie #2 Title',
+      rate: 9.5
+    },
+    {
+      imageUrl: '../../../assets/images/card-image.png',
+      title: 'Movie #2 Title',
+      rate: 9.5
+    },
+    {
+      imageUrl: '../../../assets/images/card-image.png',
+      title: 'Movie #2 Title',
+      rate: 9.5
+    },
+    {
+      imageUrl: '../../../assets/images/card-image.png',
+      title: 'Movie #2 Title',
+      rate: 9.5
+    },
+    {
+      imageUrl: '../../../assets/images/card-image.png',
+      title: 'Movie #2 Title',
+      rate: 9.5
+    }
+  ]
+
   constructor() { }
 
   ngOnInit(): void {
