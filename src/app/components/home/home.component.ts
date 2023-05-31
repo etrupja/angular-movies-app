@@ -9,6 +9,9 @@ export class HomeComponent implements OnInit {
 
   constructor() {
   }
+
+  isVisible = true;
+
   // currentStyles: Record<string, string> = {};
   // isCentered = true;
   // isSuccess = false;
