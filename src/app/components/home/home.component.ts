@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  errorColor = "text-danger";
+  successColor = "text-success";
+  isSuccess = true;
+
   constructor() { }
 
   ngOnInit(): void {
