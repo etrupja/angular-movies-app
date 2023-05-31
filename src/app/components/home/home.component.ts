@@ -7,11 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  errorColor = "text-danger";
-  successColor = "text-success";
-  isSuccess = true;
+  currentStyles: Record<string, string> = {};
 
-  constructor() { }
+
+  isCentered = true;
+  isSuccess = false;
+  isLarge = true;
+
+  constructor() { 
+    this.currentStyles = {
+      'text-align': this.isCentered ? 'center':'',
+      'color': this.isSuccess ? 'green':'red',
+      'font-size': this.isLarge ? 'large': 'small'
+    };
+  }
 
   ngOnInit(): void {
   }
