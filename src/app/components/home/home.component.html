@@ -1,16 +1,6 @@
 <div class="row">
 
-    <div [ngSwitch]="integerValue">
-        <h2 *ngSwitchCase="0">The value is {{integerValue}}</h2>
-        <h2 *ngSwitchCase="10">The value is {{integerValue}}</h2>
-        <h2 *ngSwitchCase="20">The value is {{integerValue}}</h2>
-        <h2 *ngSwitchCase="30">The value is {{integerValue}}</h2>
-
-        <h2 *ngSwitchDefault>The value is the default one!</h2>
-
-
-    </div>
-
+    <h2 appHeader *ngIf="isVisible">This is just a sample text</h2>
 
     <div class="col-md-8">
         <div id="carouselExampleCaptions" class="carousel slide">

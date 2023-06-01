@@ -10,7 +10,7 @@ export class HomeComponent implements OnInit {
   constructor() {
   }
 
-  integerValue = 15;
+  isVisible = true;
 
   fanFavoriteMovies: any[] = 
   [
