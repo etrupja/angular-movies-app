@@ -1,0 +1,19 @@
+[
+    {
+      "id": 1,
+      "imageUrl": "../../../assets/images/card-image.png",
+      "title": "Movie #1 Title",
+      "description": "This is a short description for Movie #1 Title",
+      "trailerLink": "#exampleModal",
+      "detailsLink": "/details/1"
+    },
+    {
+      "id": 2,
+      "imageUrl": "../../../assets/images/card-image.png",
+      "title": "Movie #2 Title",
+      "description": "This is a short description for Movie #2 Title",
+      "trailerLink": "#exampleModal",
+      "detailsLink": "/details/1"
+    }
+  ]
+  
