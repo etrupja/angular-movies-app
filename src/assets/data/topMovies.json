@@ -1,0 +1,19 @@
+[
+    {
+      "imageUrl": "../../../assets/images/card-image.png",
+      "title": "Movie #1 Title",
+      "actors": "Movie #1 Actors",
+      "year": "2023",
+      "rate": 9.5,
+      "rank": 1
+    },
+    {
+      "imageUrl": "../../../assets/images/card-image.png",
+      "title": "Movie #2 Title",
+      "actors": "Movie #2 Actors",
+      "year": "2023",
+      "rate": 9.2,
+      "rank": 2
+    }
+  ]
+  
