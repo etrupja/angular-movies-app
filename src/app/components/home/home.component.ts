@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,82 +8,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  //Inject HttpCLient
-  constructor() {
+  constructor(private httpClient: HttpClient) {
   }
 
   isActive = false;
 
-  fanFavoriteMovies: any[] = 
-  [
-    {
-      imageUrl: '../../../assets/images/card-image.png',
-      title: 'Movie #1 Title',
-      actors: 'Movie #1 Actors',
-      year: '2023',
-      rate: 9.5,
-      rank: 1
-    },
-    {
-      imageUrl: '../../../assets/images/card-image.png',
-      title: 'Movie #2 Title',
-      actors: 'Movie #2 Actors',
-      year: '2023',
-      rate: 9.2,
-      rank: 2
-    },
-    {
-      imageUrl: '../../../assets/images/card-image.png',
-      title: 'Movie #3 Title',
-      actors: 'Movie #3 Actors',
-      year: '2023',
-      rate: 9.2,
-      rank: 3
-    },
-    {
-      imageUrl: '../../../assets/images/card-image.png',
-      title: 'Movie #4 Title',
-      actors: 'Movie #4 Actors',
-      year: '2023',
-      rate: 9.2,
-      rank: 4
-    }
-  ]
-
-  topMovies: any[] = 
-  [
-    {
-      imageUrl: '../../../assets/images/card-image.png',
-      title: 'Movie #1 Title',
-      actors: 'Movie #1 Actors',
-      year: '2023',
-      rate: 9.5,
-      rank: 1
-    },
-    {
-      imageUrl: '../../../assets/images/card-image.png',
-      title: 'Movie #2 Title',
-      actors: 'Movie #2 Actors',
-      year: '2023',
-      rate: 9.2,
-      rank: 2
-    }
-  ]
-
-  // currentStyles: Record<string, string> = {};
-  // isCentered = true;
-  // isSuccess = false;
-  // isLarge = true;
-
-  // constructor() { 
-  //   // this.currentStyles = {
-  //   //   'text-align': this.isCentered ? 'center':'',
-  //   //   'color': this.isSuccess ? 'green':'red',
-  //   //   'font-size': this.isLarge ? 'large': 'small'
-  //   // };
-  // }
+  fanFavoriteMovies: any[] = [];
+  topMovies: any[] = [];
 
   ngOnInit(): void {
+    this.getFanFavoriteMovies();
+    this.getTopMovies();
+  }
+
+  getFanFavoriteMovies(){
+    this.httpClient.get<any[]>('assets/data/fanFavoriteMovies.json')
+    .subscribe((data:any[]) => {
+      this.fanFavoriteMovies = data;
+    });
+  }
+
+  getTopMovies(){
+    this.httpClient.get<any[]>('assets/data/topMovies.json')
+    .subscribe((data:any[]) => {
+      this.topMovies = data;
+    });
   }
 
 }
