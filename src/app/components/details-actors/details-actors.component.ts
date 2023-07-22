@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,70 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailsActorsComponent implements OnInit {
 
-  movieActors: any[] = [
-    {
-      imageUrl:'../../../assets/images/actor-image.jpg',
-      name: 'Actor name',
-      role: 'Role'
-    },
-    {
-      imageUrl:'../../../assets/images/actor-image.jpg',
-      name: 'Actor name',
-      role: 'Role'
-    },{
-      imageUrl:'../../../assets/images/actor-image.jpg',
-      name: 'Actor name',
-      role: 'Role'
-    },{
-      imageUrl:'../../../assets/images/actor-image.jpg',
-      name: 'Actor name',
-      role: 'Role'
-    },{
-      imageUrl:'../../../assets/images/actor-image.jpg',
-      name: 'Actor name',
-      role: 'Role'
-    },{
-      imageUrl:'../../../assets/images/actor-image.jpg',
-      name: 'Actor name',
-      role: 'Role'
-    },{
-      imageUrl:'../../../assets/images/actor-image.jpg',
-      name: 'Actor name',
-      role: 'Role'
-    },{
-      imageUrl:'../../../assets/images/actor-image.jpg',
-      name: 'Actor name',
-      role: 'Role'
-    },{
-      imageUrl:'../../../assets/images/actor-image.jpg',
-      name: 'Actor name',
-      role: 'Role'
-    },{
-      imageUrl:'../../../assets/images/actor-image.jpg',
-      name: 'Actor name',
-      role: 'Role'
-    },{
-      imageUrl:'../../../assets/images/actor-image.jpg',
-      name: 'Actor name',
-      role: 'Role'
-    },{
-      imageUrl:'../../../assets/images/actor-image.jpg',
-      name: 'Actor name',
-      role: 'Role'
-    },{
-      imageUrl:'../../../assets/images/actor-image.jpg',
-      name: 'Actor name',
-      role: 'Role'
-    },{
-      imageUrl:'../../../assets/images/actor-image.jpg',
-      name: 'Actor name',
-      role: 'Role'
-    },
-  ]
+  movieActors: any[] = [];
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
 
   ngOnInit(): void {
+    this.loadMovieActors();
+  }
+
+  loadMovieActors() {
+    this.httpClient.get<any[]>('assets/data/movieActors.json')
+    .subscribe((data:any[]) => {
+      this.movieActors = data;
+    })
   }
 
 }

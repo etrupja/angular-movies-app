@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,33 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailsReviewsComponent implements OnInit {
 
-movieRates: any[] = [
-  {
-    rate: 7.5,
-    review: 'This p tag is going to have the review description. Sometimes it can be very long and that is why we are using an accordion',
-    author: 'Author',
-    usefulCount: 100,
-    totalCount: 120
-  },
-  {
-    rate: 7.5,
-    review: 'This p tag is going to have the review description. Sometimes it can be very long and that is why we are using an accordion',
-    author: 'Author',
-    usefulCount: 100,
-    totalCount: 120
-  },
-  {
-    rate: 7.5,
-    review: 'This p tag is going to have the review description. Sometimes it can be very long and that is why we are using an accordion',
-    author: 'Author',
-    usefulCount: 100,
-    totalCount: 120
-  }
-]
+movieRates: any[] = [];
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
 
   ngOnInit(): void {
+    this.loadMovieRates();
+  }
+
+  loadMovieRates() {
+    this.httpClient.get<any[]>('assets/data/movieRates.json')
+    .subscribe((data:any[]) => {
+      this.movieRates = data;
+    })
   }
 
 }
