@@ -21,6 +21,9 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { HeaderDirective } from './directives/header.directive';
 import { MyIfDirective } from './directives/my-if.directive';
 
+//Import HttpClientModule
+import {HttpClientModule} from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +50,8 @@ import { MyIfDirective } from './directives/my-if.directive';
   imports: [
     BrowserModule,
     AppRoutesModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
