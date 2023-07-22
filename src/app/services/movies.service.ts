@@ -15,4 +15,25 @@ export class MoviesService {
   getTopMovies(){
    return this.httpClient.get<any[]>('assets/data/topMovies.json');
   }
+
+  getMovieSummary(){
+    return this.httpClient.get('assets/data/movieSummary.json');
+  }
+
+  getMovieActors() {
+    return this.httpClient.get<any[]>('assets/data/movieActors.json');
+  }
+
+  getSimilarMovies() {
+    return this.httpClient.get<any[]>('assets/data/similarMovies.json');
+  }
+
+  getMovieRates() {
+    return this.httpClient.get<any[]>('assets/data/movieRates.json');
+  }
+
+  getSearchedMovies(){
+    return this.httpClient.get<any[]>('assets/data/movieSearch.json');
+  }
+
 }

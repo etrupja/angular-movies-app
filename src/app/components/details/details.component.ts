@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, OnChanges, AfterContentInit, AfterContentChecked, AfterViewInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { MoviesService } from 'src/app/services/movies.service';
 
 @Component({
   selector: 'app-details',
@@ -16,15 +17,11 @@ export class DetailsComponent implements OnInit{
   directors = [];
 
   constructor(private _activedRoute: ActivatedRoute, 
-    private httpClient: HttpClient) {
+    private moviesService: MoviesService) {
 
     this._activedRoute.params.subscribe((p) => {
       this.movieId = p["id"];
-
-      console.log('Movie Id = '+this.movieId);
-
     })
-
    }
 
   ngOnInit(): void {
@@ -32,14 +29,11 @@ export class DetailsComponent implements OnInit{
   }
 
   loadMovieSummary(){
-    this.httpClient.get('assets/data/movieSummary.json')
+    this.moviesService.getMovieSummary()
     .subscribe((data:any) => {
-      console.log('Summary - ', data);
-
       this.stars = data.stars;
       this.genres = data.genres;
       this.directors = data.directors;
-
     })
   }
 
