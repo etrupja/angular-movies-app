@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { catchError, of } from 'rxjs';
 
 @Component({
@@ -8,6 +8,8 @@ import { catchError, of } from 'rxjs';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+
+  // private httpClientOther = inject(HttpClient);
 
   constructor(private httpClient: HttpClient) {
   }
