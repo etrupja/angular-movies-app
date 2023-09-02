@@ -25,6 +25,8 @@
                         <div *ngIf="feedbackForm.get('emailAddress')?.hasError('required')">Email address is required</div>
                         
                         <div *ngIf="feedbackForm.get('emailAddress')?.hasError('email')">Invalid format</div>
+
+                        <div *ngIf="feedbackForm.get('emailAddress')?.hasError('invalidDomain')">Invalid domain</div>
                     </div>
 
                 </div>
@@ -104,6 +106,8 @@
                         feedbackForm.get('feedback')?.dirty">
 
                         <div *ngIf="feedbackForm.get('feedback')?.hasError('required')">Feedback is required</div>
+
+                        <div *ngIf="feedbackForm.get('feedback')?.hasError('inappropriateKeyword')">Remove inappropriate keywords</div>
                         
                     </div>
                 </div>

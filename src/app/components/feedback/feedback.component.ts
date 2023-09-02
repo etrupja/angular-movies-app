@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Feedback } from 'src/app/data/model/Feedback';
 import {FormGroup, FormBuilder, Validators, FormControl} from '@angular/forms';
+import { emailDomainValidator } from 'src/app/validators/email.validator';
+import { inappropriateKeywordsValidator } from 'src/app/validators/keywords.validator';
 
 @Component({
   selector: 'app-feedback',
@@ -17,11 +19,13 @@ export class FeedbackComponent implements OnInit {
 
   ngOnInit(): void {
     this.feedbackForm = new FormGroup({
-      emailAddress: new FormControl('', [Validators.required, Validators.email]),
+      emailAddress: new FormControl('', [Validators.required, Validators.email, emailDomainValidator('@trupja.com')]),
+
       phoneNumber: new FormControl('', [Validators.required]),
       rate: new FormControl(8, [Validators.min(0), Validators.max(10)]),
       feedbackTitle: new FormControl('', [Validators.required]),
-      feedback:new FormControl('',[Validators.required])
+      
+      feedback:new FormControl('',[Validators.required, inappropriateKeywordsValidator(['spam','bot'])])
     })
   }
 
