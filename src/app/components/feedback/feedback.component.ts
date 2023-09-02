@@ -14,7 +14,7 @@ export class FeedbackComponent implements OnInit {
   }
 
   submitFeedback(){
-    //Add some code
+    console.log('Feedback form [Submit] - ', this.feedback);
   }
 
 }

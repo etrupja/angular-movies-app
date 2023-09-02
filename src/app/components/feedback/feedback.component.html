@@ -15,7 +15,19 @@
                         name="emailAddress"
                         placeholder="Your email address"
                         [(ngModel)]="feedback.emailAddress"
+
+                        required
+                        email
+
+                        #emailInput = "ngModel"
                     />
+                    <div class="text-danger" 
+                    *ngIf="emailInput.invalid && (emailInput.dirty || feedbackForm.submitted)">
+
+                    <div *ngIf="emailInput.hasError('required')">Email is required</div>
+                    <div *ngIf="emailInput.hasError('email')">Invalid email format</div>
+
+                    </div>
                 </div>
         
                 <div class="mb-3">
@@ -27,7 +39,23 @@
                         name="phoneNumber"
                         placeholder="Your phone number"
                         [(ngModel)]="feedback.phoneNumber"
+
+                        pattern="[0-9]{4}-[0-9]{4}"
+
+                        #phoneInput = "ngModel"
                     />
+
+                    <div 
+                    class="text-danger" 
+                    *ngIf="phoneInput.invalid && (phoneInput.dirty || feedbackForm.submitted)">
+                        <div 
+                            *ngIf="phoneInput.hasError('pattern')">
+                            Invalid phone number format
+                        </div>
+
+                    </div>
+
+
                 </div>
         
                 <div class="mb-3">
@@ -54,7 +82,21 @@
                         placeholder="Your feedback title"
                         name="feedbackTitle"
                         [(ngModel)]="feedback.feedbackTitle"
+
+                        required
+
+                        #feedbackTitleInput = "ngModel"
                     />
+
+                    <div 
+                    class="text-danger" 
+                    *ngIf="feedbackTitleInput.invalid && (feedbackTitleInput.dirty || feedbackForm.submitted)">
+                        <div 
+                            *ngIf="feedbackTitleInput.hasError('required')">
+                            Feedback title is required
+                        </div>
+
+                    </div>
                 </div>
         
                 <div class="mb-3">
@@ -66,11 +108,29 @@
                         name="feedback"
                         placeholder="Your feedback"
                         [(ngModel)]="feedback.feedback"
+
+                        required
+
+                        #feedbackInput="ngModel"
                     />
+
+                    <div 
+                    class="text-danger" 
+                    *ngIf="feedbackInput.invalid && (feedbackInput.dirty || feedbackForm.submitted)">
+                        <div 
+                            *ngIf="feedbackInput.hasError('required')">
+                            Feedback title is required
+                        </div>
+
+                    </div>
+
                 </div>
         
                 <div class="mb-3">
-                    <button type="submit" class="btn btn-primary">
+                    <button type="submit" 
+                    class="btn btn-primary"
+                    [disabled]="!feedbackForm.valid"
+                    >
                         <i class="bi bi-send"></i> Submit feedback
                     </button>
                 </div>
