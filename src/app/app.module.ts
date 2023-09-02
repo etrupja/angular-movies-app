@@ -25,6 +25,7 @@ import { MyIfDirective } from './directives/my-if.directive';
 import {HttpClientModule} from '@angular/common/http';
 import { MoviesService } from './services/movies.service';
 import { GlobalErrorHandler } from './services/global-error-handler.service';
+import { FeedbackComponent } from './components/feedback/feedback.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { GlobalErrorHandler } from './services/global-error-handler.service';
     ModalComponent,
     NotFoundComponent,
     DetailsActorsComponent,
+    FeedbackComponent,
 
     //Pipes
     ProfitPipe,
