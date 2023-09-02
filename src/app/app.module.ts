@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -24,6 +24,7 @@ import { MyIfDirective } from './directives/my-if.directive';
 //Import HttpClientModule
 import {HttpClientModule} from '@angular/common/http';
 import { MoviesService } from './services/movies.service';
+import { GlobalErrorHandler } from './services/global-error-handler.service';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,9 @@ import { MoviesService } from './services/movies.service';
     FormsModule,
     HttpClientModule
   ],
-  providers: [MoviesService],
+  providers: [MoviesService, 
+    {provide: ErrorHandler, useClass: GlobalErrorHandler}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

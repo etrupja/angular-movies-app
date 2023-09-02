@@ -17,7 +17,7 @@ export class MoviesService {
   }
 
   getMovieSummary(){
-    return this.httpClient.get('assets/data/movieSummary.json');
+    return this.httpClient.get('assets/data/movieSummaryNotExists.json');
   }
 
   getMovieActors() {
