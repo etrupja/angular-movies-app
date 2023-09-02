@@ -2,7 +2,7 @@
 
     <div class="row">
         <div class="col-md-8 offset-md-2">
-            <form #feedbackForm="ngForm" (ngSubmit)="submitFeedback()">
+            <form>
                 <legend>Let us know what you think</legend>
                 <hr>
         
@@ -12,22 +12,8 @@
                         type="email"
                         class="form-control"
                         id="emailAddress"
-                        name="emailAddress"
                         placeholder="Your email address"
-                        [(ngModel)]="feedback.emailAddress"
-
-                        required
-                        email
-
-                        #emailInput = "ngModel"
                     />
-                    <div class="text-danger" 
-                    *ngIf="emailInput.invalid && (emailInput.dirty || feedbackForm.submitted)">
-
-                    <div *ngIf="emailInput.hasError('required')">Email is required</div>
-                    <div *ngIf="emailInput.hasError('email')">Invalid email format</div>
-
-                    </div>
                 </div>
         
                 <div class="mb-3">
@@ -36,67 +22,30 @@
                         type="text"
                         class="form-control"
                         id="phoneNumer"
-                        name="phoneNumber"
                         placeholder="Your phone number"
-                        [(ngModel)]="feedback.phoneNumber"
-
-                        pattern="[0-9]{4}-[0-9]{4}"
-
-                        #phoneInput = "ngModel"
                     />
-
-                    <div 
-                    class="text-danger" 
-                    *ngIf="phoneInput.invalid && (phoneInput.dirty || feedbackForm.submitted)">
-                        <div 
-                            *ngIf="phoneInput.hasError('pattern')">
-                            Invalid phone number format
-                        </div>
-
-                    </div>
-
-
                 </div>
         
                 <div class="mb-3">
-                    <label for="rate" class="form-label">Rate experience</label>
+                    <label for="rateExperience" class="form-label">Rate experience</label>
                     <input
                         type="range"
                         class="form-range"
                         min="0"
                         max="10"
                         step="1"
-                        id="rate"
-                        name="rate"
-                        [(ngModel)]="feedback.rate"
+                        id="rateExperience"
                     />
-                    <div>Your feedback: {{feedback.rate}}</div>
                 </div>
         
                 <div class="mb-3">
-                    <label for="feedbackTitle" class="form-label">Title</label>
+                    <label for="title" class="form-label">Title</label>
                     <input
                         type="text"
                         class="form-control"
-                        id="feedbackTitle"
+                        id="title"
                         placeholder="Your feedback title"
-                        name="feedbackTitle"
-                        [(ngModel)]="feedback.feedbackTitle"
-
-                        required
-
-                        #feedbackTitleInput = "ngModel"
                     />
-
-                    <div 
-                    class="text-danger" 
-                    *ngIf="feedbackTitleInput.invalid && (feedbackTitleInput.dirty || feedbackForm.submitted)">
-                        <div 
-                            *ngIf="feedbackTitleInput.hasError('required')">
-                            Feedback title is required
-                        </div>
-
-                    </div>
                 </div>
         
                 <div class="mb-3">
@@ -105,32 +54,12 @@
                         type="text"
                         class="form-control"
                         id="feedback"
-                        name="feedback"
                         placeholder="Your feedback"
-                        [(ngModel)]="feedback.feedback"
-
-                        required
-
-                        #feedbackInput="ngModel"
                     />
-
-                    <div 
-                    class="text-danger" 
-                    *ngIf="feedbackInput.invalid && (feedbackInput.dirty || feedbackForm.submitted)">
-                        <div 
-                            *ngIf="feedbackInput.hasError('required')">
-                            Feedback title is required
-                        </div>
-
-                    </div>
-
                 </div>
         
                 <div class="mb-3">
-                    <button type="submit" 
-                    class="btn btn-primary"
-                    [disabled]="!feedbackForm.valid"
-                    >
+                    <button type="submit" class="btn btn-primary">
                         <i class="bi bi-send"></i> Submit feedback
                     </button>
                 </div>
