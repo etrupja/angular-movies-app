@@ -2,7 +2,7 @@
 
     <div class="row">
         <div class="col-md-8 offset-md-2">
-            <form>
+            <form [formGroup]="feedbackForm" (ngSubmit)="submitFeedback()">
                 <legend>Let us know what you think</legend>
                 <hr>
         
@@ -13,6 +13,8 @@
                         class="form-control"
                         id="emailAddress"
                         placeholder="Your email address"
+
+                        formControlName="emailAddress"
                     />
                 </div>
         
@@ -23,6 +25,8 @@
                         class="form-control"
                         id="phoneNumer"
                         placeholder="Your phone number"
+
+                        formControlName="phoneNumber"
                     />
                 </div>
         
@@ -35,6 +39,8 @@
                         max="10"
                         step="1"
                         id="rateExperience"
+
+                        formControlName="rate"
                     />
                 </div>
         
@@ -45,6 +51,9 @@
                         class="form-control"
                         id="title"
                         placeholder="Your feedback title"
+
+                        formControlName="feedbackTitle"
+
                     />
                 </div>
         
@@ -55,6 +64,8 @@
                         class="form-control"
                         id="feedback"
                         placeholder="Your feedback"
+
+                        formControlName="feedback"
                     />
                 </div>
         

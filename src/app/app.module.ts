@@ -12,7 +12,7 @@ import { SearchComponent } from './components/search/search.component';
 import { LoaderComponent } from './components/loader/loader.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { ProfitPipe } from './pipes/profit.pipe';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DetailsActorsComponent } from './components/details-actors/details-actors.component';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
@@ -55,6 +55,7 @@ import { FeedbackComponent } from './components/feedback/feedback.component';
     BrowserModule,
     AppRoutesModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [MoviesService, 
