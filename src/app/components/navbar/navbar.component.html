@@ -34,12 +34,44 @@
         </button>
 
         <ng-template #logoutButton>
-          <button 
-            class="btn btn-outline-danger" 
-            *ngIf="_auth.isAuthenticated$ | async"
-            (click)="_auth.logout()">
-            Log out
+
+          <div class="btn-group btn-logout">
+            <button type="button"
+              class="btn dropdown-toggle"
+              data-bs-toggle="dropdown"
+              aria-expanded="true">
+
+              <img 
+                src="{{loggedInUser.picture}}" 
+                class="round-circle"
+                height="30"
+                width="30"
+                alt="Profile picture"
+              />
           </button>
+
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li>
+              <a class="dropdown-item">
+                <span *ngIf="loggedInUser.name">
+                  <b><i class="bi bi-person"></i> {{loggedInUser.name}}</b>
+                </span>
+                <br>
+                <span *ngIf="loggedInUser.email">
+                  <b><i class="bi bi-envelope"></i> {{loggedInUser.email}}</b>
+                </span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li>
+              <button class="dropdown-item logout" (click)="_auth.logout()">
+                <i class="bi bi-box-arrow-left"></i> Log out
+              </button>
+            </li>
+          </ul>
+          </div>
         </ng-template>
       </div>
     </div>
