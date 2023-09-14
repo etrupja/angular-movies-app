@@ -22,8 +22,46 @@
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="searchMovieTitle">
         <button class="btn btn-outline-success" type="submit" 
         [routerLink]="['/search/'+searchMovieTitle]">Search</button>
-        <!-- <button class="btn btn-outline-primary">Log in</button> -->
       </div>
-    </div>
+
+      <div class="d-flex">
+        <button *ngIf="!(_auth.isAuthenticated$ | async)" class="btn btn-outline-primary" (click)="login()"><i class="bi bi-box-arrow-in-right"></i> Log in</button>
+      
+        <div *ngIf="_auth.isAuthenticated$ | async">
+          <div class="btn-group btn-logout" *ngIf="loggedInUser">
+            <button
+              type="button"
+              class="btn dropdown-toggle"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img
+                src="{{ loggedInUser.picture }}"
+                class="rounded-circle"
+                height="30"
+                width="30"
+                alt="Profile picture"
+              />
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li>
+                <a class="dropdown-item">
+                    <span *ngIf="loggedInUser.name"><b><i class="bi bi-person"></i> {{ loggedInUser.name }}</b></span>
+                    <br />
+                    <span *ngIf="loggedInUser.email"><i class="bi bi-envelope"></i> {{ loggedInUser.email }}</span>
+                </a>
+              </li>
+              <li><hr class="dropdown-divider" /></li>
+              <li>
+                <button class="dropdown-item logout" (click)="logout()">
+                  <i class="bi bi-box-arrow-left"></i> Log out
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div> 
   </div>
 </nav>

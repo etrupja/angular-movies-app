@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
   selector: 'app-navbar',
@@ -8,10 +9,27 @@ import { Component, OnInit } from '@angular/core';
 export class NavbarComponent implements OnInit {
 
   public searchMovieTitle = ""
+  public loggedInUser: any;
 
-  constructor() { }
+  constructor(public _auth: AuthService) { }
 
   ngOnInit(): void {
+    if (this._auth.user$) {
+      this._auth.user$.subscribe((user) => {
+        this.loggedInUser = user;
+
+        console.log(this.loggedInUser);
+
+      });
+    }
+  }
+
+  login(){
+    this._auth.loginWithPopup();
+  }
+
+  logout(){
+    this._auth.logout();
   }
 
 }

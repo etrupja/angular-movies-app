@@ -8,6 +8,7 @@ import { HomeComponent } from '../components/home/home.component';
 import { SearchComponent } from '../components/search/search.component';
 import { NotFoundComponent } from '../components/not-found/not-found.component';
 import { FeedbackComponent } from '../components/feedback/feedback.component';
+import { AuthGuard } from '../auth.guard';
 
 
 const routes: Routes = 
@@ -18,7 +19,7 @@ const routes: Routes =
         {path:'details/actors/:id', component: DetailsActorsComponent},
         {path:'details/movies/:id', component: DetailsMoviesComponent},
         {path:'details/reviews/:id', component: DetailsReviewsComponent},
-        {path:'feedback', component: FeedbackComponent},
+        {path:'feedback', component: FeedbackComponent, canActivate: [AuthGuard]},
 
         //START: Nested Routes
         // {path:'details/:id', component: DetailsComponent, children:[

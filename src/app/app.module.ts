@@ -26,6 +26,8 @@ import {HttpClientModule} from '@angular/common/http';
 import { MoviesService } from './services/movies.service';
 import { GlobalErrorHandler } from './services/global-error-handler.service';
 import { FeedbackComponent } from './components/feedback/feedback.component';
+import { AuthModule } from '@auth0/auth0-angular';
+import { AuthGuard } from './auth.guard';
 
 @NgModule({
   declarations: [
@@ -56,10 +58,19 @@ import { FeedbackComponent } from './components/feedback/feedback.component';
     AppRoutesModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    // Import the module into the application, with configuration
+    AuthModule.forRoot({
+      domain: 'dev-pf8s6elr.auth0.com',
+      clientId: 'KaXbPvKcgUaDsGf0lqRH1jbhBDpm6jLk',
+      authorizationParams: {
+        redirect_uri: window.location.origin
+      }
+    }),
   ],
   providers: [MoviesService, 
-    {provide: ErrorHandler, useClass: GlobalErrorHandler}
+    {provide: ErrorHandler, useClass: GlobalErrorHandler},
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
